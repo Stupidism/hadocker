@@ -15,13 +15,12 @@
     "modelsNeedle": "// Insert models below",
     "filters": {
       "js": true,
-      "babel": true,
       "html": true,
       "less": true,
       "uirouter": true,
-      "bootstrap": false,
-      "uibootstrap": false,
-      "auth": true,
+      "bootstrap": true,
+      "uibootstrap": true,
+      "socketio": true,
       "models": true,
       "mongooseModels": true,
       "mongoose": true,
@@ -46,7 +45,6 @@
       "uirouter"
     ],
     "extensions": [
-      "babel",
       "js",
       "html",
       "less"

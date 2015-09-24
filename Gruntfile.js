@@ -56,10 +56,6 @@ module.exports = function (grunt) {
       }
     },
     watch: {
-      babel: {
-        files: ['<%= yeoman.client %>/{app,components}/**/!(*.spec|*.mock).js'],
-        tasks: ['newer:babel:client']
-      },
       injectJS: {
         files: [
           '<%= yeoman.client %>/{app,components}/**/!(*.spec|*.mock).js',
@@ -222,9 +218,11 @@ module.exports = function (grunt) {
     wiredep: {
       options: {
         exclude: [ 
+          /bootstrap.js/,
           '/json3/',
           '/es5-shim/',
-          /font-awesome\.css/
+          /font-awesome\.css/,
+          /bootstrap\.css/
         ]
       },
       client: {
@@ -400,11 +398,9 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
-        'newer:babel:client',
         'less',
       ],
       test: [
-        'newer:babel:client',
         'less',
       ],
       debug: {
@@ -417,7 +413,6 @@ module.exports = function (grunt) {
         }
       },
       dist: [
-        'newer:babel:client',
         'less',
         'imagemin'
       ]
@@ -510,14 +505,6 @@ module.exports = function (grunt) {
       options: {
         sourceMap: true
       },
-      client: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.client %>',
-          src: ['{app,components}/**/!(*.spec).js'],
-          dest: '.tmp'
-        }]
-      },
       server: {
         options: {
           optional: ['runtime']
@@ -558,7 +545,7 @@ module.exports = function (grunt) {
         files: {
           '<%= yeoman.client %>/index.html': [
                [
-                 '.tmp/{app,components}/**/!(*.spec|*.mock).js',
+                 '{.tmp,<%= yeoman.client %>}/{app,components}/**/!(*.spec|*.mock).js',
                  '!{.tmp,<%= yeoman.client %>}/app/app.js'
                ]
             ]

@@ -5,6 +5,7 @@ describe('Controller: MainController', function() {
   // load the controller's module
   beforeEach(module('hadockerApp'));
   beforeEach(module('stateMock'));
+  beforeEach(module('socketMock'));
 
   var scope;
   var MainController;

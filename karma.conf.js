@@ -19,6 +19,7 @@ module.exports = function(config) {
     files: [
       // bower:js
       // endbower
+      'node_modules/socket.io-client/socket.io.js',
       'client/app/app.js',
       'client/app/**/*.js',
       'client/components/**/*.js',
@@ -31,7 +32,6 @@ module.exports = function(config) {
     preprocessors: {
       '**/*.jade': 'ng-jade2js',
       '**/*.html': 'html2js',
-      'client/{app,components}/**/*.js': 'babel'
     },
 
     ngHtml2JsPreprocessor: {
@@ -42,18 +42,6 @@ module.exports = function(config) {
       stripPrefix: 'client/'
     },
 
-    
-    babelPreprocessor: {
-      options: {
-        sourceMap: 'inline'
-      },
-      filename: function (file) {
-        return file.originalPath.replace(/\.js$/, '.es5.js');
-      },
-      sourceFileName: function (file) {
-        return file.originalPath;
-      }
-    },
     
 
     // list of files / patterns to exclude

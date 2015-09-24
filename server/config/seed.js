@@ -5,7 +5,7 @@
 
 'use strict';
 import Thing from '../api/thing/thing.model';
-import User from '../api/user/user.model';
+import Dockerimg from '../api/dockerimg/dockerimg.model';
 
 Thing.find({}).removeAsync()
   .then(function() {
@@ -39,21 +39,17 @@ Thing.find({}).removeAsync()
     });
   });
 
-User.find({}).removeAsync()
+Dockerimg.find({}).removeAsync()
   .then(function() {
-    User.createAsync({
-      provider: 'local',
-      name: 'Test User',
-      email: 'test@example.com',
-      password: 'test'
+    Dockerimg.create({
+      user: 'luowei',
+      name: 'image1',
+      tag: 'latest',
+      dockerId: 'id111',
     }, {
-      provider: 'local',
-      role: 'admin',
-      name: 'Admin',
-      email: 'admin@example.com',
-      password: 'admin'
-    })
-    .then(function() {
-      console.log('finished populating users');
+      user: 'qinhe',
+      name: 'image2',
+      tag: 'latest2',
+      dockerId: 'id222',
     });
-  });
+});

@@ -1,7 +1,7 @@
-@import '../bower_components/font-awesome/less/font-awesome.less';
 @import '../bower_components/bootstrap/less/bootstrap.less';
+@import '../bower_components/font-awesome/less/font-awesome.less';
 
-
+@icon-font-path: '../bower_components/bootstrap/fonts/';
 @fa-font-path: '../bower_components/font-awesome/fonts';
 
 /**
@@ -15,15 +15,9 @@
   padding: 0.2em 0;
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-}
-
 // injector
 @import 'admin/admin.less';
 @import 'main/main.less';
 @import '../components/footer/footer.less';
+@import '../components/modal/modal.less';
 // endinjector
