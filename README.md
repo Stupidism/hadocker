@@ -19,9 +19,14 @@ This project was generated with the [Angular Full-Stack Generator](https://githu
 2. Run `bower install` to install front-end dependencies.
 
 3. Run `mongod` in a separate shell to keep an instance of the MongoDB Daemon running  
-   [MongoDB Environment Setting](http://blog.csdn.net/salonzhou/article/details/15812093)
+   Set the environment [MongoDB Environment Setting](http://blog.csdn.net/salonzhou/article/details/15812093)
 
 4. Run `grunt serve` to start the development server. It should automatically open the client in your browser when ready.
+
+## Develop with yo-angular-fullstack
+
+Run `npm install -g yo grunt-cli bower generator-angular-fullstack`  
+Read the [usages](https://github.com/DaftMonk/generator-angular-fullstack)
 
 ## Build & development
 
